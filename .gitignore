@@ -7,6 +7,11 @@ anomeme/.next/
 anomeme/out/
 anomeme/dist/
 
+# Elixir build artifacts
+anomeme_backend/_build/
+anomeme_backend/deps/
+anomeme_backend/priv/static/assets/
+
 # Environment variables
 .env
 .env.local
