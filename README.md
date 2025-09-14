@@ -1,53 +1,109 @@
-# ANOMEME - Social Intent Terminal
+# ANOMEME
 
-**Memecoin trading is broken.** Traders get rekt by MEV bots, rug pulls, and snipers while trying to catch social momentum.
+**Automated Memecoin Trading Platform**
 
-**ANOMEME fixes this** using Anoma's intent system for automated, MEV-protected memecoin trading based on social signals.
+ANOMEME is a decentralized trading platform that enables automated memecoin trading based on social media signals. Built on Anoma's intent system, it provides MEV protection and intelligent risk management for meme token trading.
 
-## 🚀 What Is This?
+## 🎯 Live Platform
 
-Set up "intents" that automatically trade memecoins based on social signals while Anoma's solvers handle MEV protection and risk analysis.
+**[https://anomeme.fun](https://anomeme.fun)**
 
-**Example**: "If Elon tweets about DOGE, buy $100 worth with max 20% loss protection."
+## ✨ Features
 
-### Key Features
-- Social Signal Trading (Twitter/Telegram → Automated trades)
-- MEV Protection via Anoma's solver network
-- AI-powered rug pull detection
-- Intent-based "set and forget" trading
-- Cross-chain unified trading
+- **Social Signal Trading** - Automate trades based on Twitter/Telegram signals
+- **MEV Protection** - Built-in protection against front-running and sandwich attacks
+- **Risk Management** - Advanced rug pull detection and risk assessment
+- **Intent-Based Trading** - Set trading rules and let the system execute automatically
+- **Cross-Chain Support** - Trade across multiple blockchain networks
+- **Real-Time Monitoring** - Live social signal processing and trade execution
 
-## 🎯 Live Demo
+## 🛠️ Technology Stack
 
-**[Try the Interactive Demo →](https://webraizo30.github.io/AnoMeme/)**
+### Frontend
+- **Next.js 15** - React framework with TypeScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Animation library
+- **Zustand** - State management
+- **Radix UI** - Component library
 
-## 📚 Documentation
+### Backend
+- **Phoenix Framework** - Elixir web framework
+- **PostgreSQL** - Database
+- **Ecto** - Database wrapper and query generator
+- **WebSocket** - Real-time communication
 
-- [Full Technical Documentation](./project-docs.md)
-- [Security Framework](./project-docs.md#security-systems)
+### Infrastructure
+- **Domain:** anomeme.fun
+- **SSL:** Let's Encrypt certificates
+- **Web Server:** Nginx
 
-## 🛠️ Tech Stack
+## 🚀 Getting Started
 
-- Next.js 14 + TypeScript + Tailwind CSS
-- ANOMA Integration
-- AI-powered risk assessment
+### Prerequisites
+- Node.js 18 or higher
+- Elixir 1.14 or higher
+- PostgreSQL 13 or higher
 
-## 🚨 Risk Warning
+## 📋 Project Status
 
-Memecoin trading is extremely risky. You can lose your entire investment.
+### ✅ Completed Features
+- **Frontend Application** - Modern React-based user interface
+- **Backend API** - Phoenix/Elixir REST API with WebSocket support
+- **Database Integration** - PostgreSQL with Ecto ORM
+- **Authentication System** - Wallet-based user authentication
+- **Intent Management** - Create and manage trading intents
+- **Risk Assessment** - Basic risk analysis and rug pull detection
+- **Social Signal Processing** - Twitter/Telegram signal monitoring
+- **Production Deployment** - Live platform at anomeme.fun
 
-## 🏃‍♂️ Quick Start
+### 🚧 In Development
+- **Anoma Protocol Integration** - Direct integration with Anoma's intent system
+- **Advanced MEV Protection** - Enhanced protection mechanisms
+- **Multi-Chain Support** - Support for additional blockchain networks
+- **Advanced Risk Models** - Machine learning-based risk assessment
 
-```bash
-git clone https://github.com/WebRaizo30/anomeme.git
-cd anomeme/anomeme
-npm install
-npm run dev
+### 📋 Planned Features
+- **Mobile Application** - iOS and Android apps
+- **Advanced Analytics** - Trading performance analytics
+- **Community Features** - Social trading and leaderboards
+- **Institutional Tools** - Advanced features for professional traders
+
+## 🏗️ System Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │    Backend      │    │   Database      │
+│   (Next.js)     │◄──►│   (Phoenix)     │◄──►│  (PostgreSQL)   │
+│   anomeme.fun   │    │   Port 4000     │    │   Port 5432     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │
+         │                       │
+         ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐
+│   Web Server    │    │  Anoma Protocol │
+│    (Nginx)      │    │   Integration   │
+│   SSL/HTTPS     │    │   (Planned)     │
+└─────────────────┘    └─────────────────┘
 ```
 
-## About
+## 🔒 Security Features
 
-Built by [WebRaizo](https://x.com/WebRaizo) - Anoma Wizard
+- **Environment Variables** - All sensitive data stored securely
+- **CORS Protection** - Cross-origin request security
+- **Input Validation** - Comprehensive data sanitization
+- **Database Security** - Encrypted connections and secure queries
+- **SSL/TLS** - End-to-end encryption for all communications
 
-Powered by [ANOMA](https://anoma.net/)
->>>>>>> caec4fd5127c822825ac7ca3619f97a2398e89fe
+## ⚠️ Risk Disclaimer
+
+Trading cryptocurrencies, especially memecoins, involves substantial risk of loss. Past performance does not guarantee future results. Only trade with funds you can afford to lose.
+
+## 📞 Contact
+
+- **Website:** [anomeme.fun](https://anomeme.fun)
+- **Developer:** [WebRaizo](https://x.com/WebRaizo)
+- **Protocol:** [Anoma](https://anoma.net/)
+
+---
+
+*Built with ❤️ for the decentralized future*
