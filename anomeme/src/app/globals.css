@@ -1,0 +1,836 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.21 0.006 285.885);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.705 0.015 286.067);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.705 0.015 286.067);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.92 0.004 286.32);
+  --primary-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.552 0.016 285.938);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.552 0.016 285.938);
+}
+
+/* ANOMA PREMIUM DESIGN SYSTEM */
+:root {
+  /* ANOMA Brand Colors */
+  --anoma-black: #000000;
+  --anoma-red: #FF0000;
+  --anoma-white: #FFFFFF;
+  
+  /* Sophisticated Grays */
+  --gray-900: #0a0a0a;
+  --gray-800: #1a1a1a;
+  --gray-700: #2a2a2a;
+  --gray-600: #3a3a3a;
+  --gray-500: #5a5a5a;
+  --gray-400: #7a7a7a;
+  --gray-300: #9a9a9a;
+  --gray-200: #bababa;
+  --gray-100: #dadada;
+  
+  /* Functional Colors */
+  --success: #00FF00;
+  --warning: #FFB800;
+  --error: var(--anoma-red);
+  --info: var(--anoma-white);
+  
+  /* Advanced Effects */
+  --shadow-premium: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  --shadow-glow-red: 0 0 30px rgba(255, 0, 0, 0.3);
+  --shadow-glow-white: 0 0 20px rgba(255, 255, 255, 0.2);
+  --blur-glass: blur(20px);
+  --blur-subtle: blur(8px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--anoma-black);
+    color: var(--anoma-white);
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Premium gradient overlay */
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(255, 0, 0, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+  }
+  
+  html {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* ANOMA PREMIUM TERMINAL PANEL */
+  .terminal-panel {
+    /* Glass morphism effect */
+    background: rgba(26, 26, 26, 0.4);
+    backdrop-filter: var(--blur-glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Premium shadow system */
+    box-shadow: 
+      var(--shadow-premium),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 0 0 1px rgba(255, 0, 0, 0.05);
+    
+    /* Sharp, modern edges */
+    border-radius: 0;
+    
+    /* Subtle transition */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .terminal-panel:hover {
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 
+      var(--shadow-premium),
+      var(--shadow-glow-red),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  
+  /* ANOMA GLOW EFFECTS */
+  .glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+  
+  .glow-white {
+    box-shadow: var(--shadow-glow-white);
+  }
+  
+  .glow-success {
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  }
+  
+  /* ANOMA STATUS INDICATORS */
+  .status-active {
+    background: var(--success);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  }
+  
+  .status-warning {
+    background: var(--warning);
+    box-shadow: 0 0 15px rgba(255, 184, 0, 0.5);
+  }
+  
+  .status-error {
+    background: var(--anoma-red);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  
+  .status-idle {
+    background: var(--gray-500);
+    box-shadow: 0 0 10px rgba(90, 90, 90, 0.3);
+  }
+  
+  /* Scan Lines Effect */
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      transparent 50%, 
+      rgba(0, 255, 65, 0.03) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* ANOMA TYPOGRAPHY SYSTEM */
+  .terminal-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  
+  /* ANOMA Brand Text */
+  .anoma-text {
+    color: var(--anoma-white);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.1em;
+  }
+  
+  /* Accent Text */
+  .accent-text {
+    color: var(--anoma-red);
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+  }
+  
+  /* Success Text */
+  .success-text {
+    color: var(--success);
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.3);
+  }
+  
+  /* Animation Classes */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--matrix-green);
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+}
+
+@layer utilities {
+  /* ANOMA CUSTOM SCROLLBAR SYSTEM */
+  .anoma-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .anoma-scrollbar::-webkit-scrollbar-track {
+    background: var(--gray-900);
+    border-radius: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .anoma-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--anoma-red) 0%, rgba(255, 0, 0, 0.4) 100%);
+    border-radius: 0;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    box-shadow: var(--shadow-glow-red);
+  }
+  
+  .anoma-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--anoma-red) 0%, rgba(255, 0, 0, 0.6) 100%);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  }
+  
+  .anoma-scrollbar::-webkit-scrollbar-thumb:active {
+    background: var(--anoma-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+
+  /* ANOMA MODAL SCROLLBAR - Ultra Thin & Premium */
+  .anoma-modal-scroll {
+    scroll-behavior: smooth;
+    scroll-padding: 20px;
+  }
+  
+  .anoma-modal-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .anoma-modal-scroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .anoma-modal-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--anoma-red) 0%, rgba(255, 0, 0, 0.6) 100%);
+    border-radius: 3px;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  
+  .anoma-modal-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--anoma-red);
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+    transform: scaleX(1.2);
+  }
+  
+  .anoma-modal-scroll::-webkit-scrollbar-thumb:active {
+    background: var(--anoma-red);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+
+  /* ANOMA SIDEBAR SCROLLBAR - Invisible Until Hover */
+  .anoma-sidebar-scroll {
+    scroll-behavior: smooth;
+  }
+  
+  .anoma-sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  .anoma-sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .anoma-sidebar-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 0, 0, 0.2);
+    border-radius: 2px;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .anoma-sidebar-scroll:hover::-webkit-scrollbar-thumb {
+    opacity: 1;
+    background: rgba(255, 0, 0, 0.4);
+  }
+  
+  .anoma-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--anoma-red) !important;
+    box-shadow: 0 0 6px rgba(255, 0, 0, 0.3);
+    opacity: 1 !important;
+  }
+
+  /* ANOMA MODAL FORM ELEMENTS */
+  .anoma-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .anoma-select:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.2);
+  }
+
+  .anoma-select:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--anoma-red);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+  }
+
+  /* Dropdown Options Styling */
+  .anoma-select option {
+    background-color: var(--gray-900);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+  }
+
+  .anoma-select option:hover {
+    background-color: var(--anoma-red);
+    color: white;
+  }
+
+  .anoma-select option:checked {
+    background-color: var(--anoma-red);
+    color: white;
+  }
+
+  .anoma-input {
+    transition: all 0.2s ease;
+  }
+
+  .anoma-input:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 0, 0, 0.3);
+  }
+
+  .anoma-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--anoma-red);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+  }
+
+  .anoma-checkbox {
+    appearance: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .anoma-checkbox:checked {
+    background-color: var(--anoma-red);
+    border-color: var(--anoma-red);
+  }
+
+  .anoma-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .anoma-checkbox:hover {
+    border-color: rgba(255, 0, 0, 0.4);
+    box-shadow: 0 0 0 1px rgba(255, 0, 0, 0.2);
+  }
+
+  .anoma-toggle {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .anoma-toggle-slider {
+    position: absolute;
+    right: 0.5px;
+    top: 0.5px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .anoma-toggle.active .anoma-toggle-slider {
+    transform: translateX(-100%);
+  }
+}
+
+/* ANOMA TOOLTIP SYSTEM */
+.tooltip-overlay {
+  position: fixed !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+  transform: translate3d(0, 0, 0) !important;
+  will-change: transform !important;
+}
+
+/* ANOMA PREMIUM ANIMATIONS */
+
+/* Core Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor;
+    opacity: 0.8;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleInCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes countUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--progress-width, 100%);
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--anoma-red); }
+}
+
+@keyframes dataFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes redGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+}
+
+@keyframes backgroundPulse {
+  0%, 100% {
+    background-color: rgba(255, 0, 0, 0.05);
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.1);
+  }
+}
+
+@keyframes signalPing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes liveBadgePulse {
+  0%, 100% {
+    background-color: var(--anoma-red);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    background-color: #ff3333;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+}
+
+@keyframes borderScan {
+  0% {
+    border-left-color: rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    border-left-color: rgba(255, 0, 0, 1);
+  }
+  100% {
+    border-left-color: rgba(255, 0, 0, 0.3);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+}
+
+@keyframes sentimentBar {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 92%;
+    opacity: 1;
+  }
+}
+
+@keyframes processingSpinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes yellowPulse {
+  0%, 100% {
+    background-color: rgba(255, 184, 0, 0.05);
+    border-left-color: rgba(255, 184, 0, 0.3);
+  }
+  50% {
+    background-color: rgba(255, 184, 0, 0.1);
+    border-left-color: rgba(255, 184, 0, 0.8);
+  }
+}
+
+@keyframes rejectedShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes subtleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 3px rgba(255, 0, 0, 0.3),
+      0 0 6px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 5px rgba(255, 0, 0, 0.5),
+      0 0 10px rgba(255, 0, 0, 0.3);
+  }
+}
+
+@keyframes crtScanlines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes statusBlink {
+  0%, 50% {
+    opacity: 1;
+    background-color: #00ff00;
+    box-shadow: 
+      0 0 5px #00ff00,
+      0 0 10px #00ff00,
+      inset 0 0 5px #00ff00;
+  }
+  51%, 100% {
+    opacity: 0.3;
+    background-color: #004400;
+    box-shadow: none;
+  }
+}
+
+/* Live Signal Animation Classes */
+.animate-signal-ping {
+  animation: signalPing 3s ease-in-out infinite;
+}
+
+.animate-live-badge {
+  animation: liveBadgePulse 2s infinite;
+}
+
+.animate-border-scan {
+  animation: borderScan 2s infinite;
+}
+
+.animate-text-glow {
+  animation: textGlow 1.5s infinite;
+}
+
+.animate-sentiment-bar {
+  animation: sentimentBar 1.5s ease-out;
+}
+
+.animate-processing-spin {
+  animation: processingSpinner 2s linear infinite;
+}
+
+.animate-yellow-pulse {
+  animation: yellowPulse 3s infinite;
+}
+
+.animate-rejected-shake {
+  animation: rejectedShake 0.5s ease-in-out;
+}
+
+.animate-subtle-glow {
+  animation: subtleGlow 3s ease-in-out infinite;
+}
+
+.animate-status-blink {
+  animation: statusBlink 2s infinite;
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleInCenter 0.4s ease-out;
+}
+
+.animate-count-up {
+  animation: countUp 0.8s ease-out;
+}
+
+.animate-progress {
+  animation: progressBar 2s ease-out;
+}
+
+.animate-data-flicker {
+  animation: dataFlicker 3s infinite;
+}
+
+.animate-red-glow {
+  animation: redGlow 2s infinite;
+}
+
+.animate-bg-pulse {
+  animation: backgroundPulse 4s infinite;
+}
+
+/* Staggered Animations */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+.animate-stagger-5 { animation-delay: 0.5s; }
+
+/* Hover Animations */
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+/* Terminal Effect */
+.terminal-flicker {
+  animation: dataFlicker 2s infinite;
+}
+
+/* Landing Page Animation Delays */
+.animate-stagger-3 {
+  animation-delay: 0.6s;
+}
+
+.animate-stagger-4 {
+  animation-delay: 0.8s;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1500ms;
+}
